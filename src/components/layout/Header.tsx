@@ -1,5 +1,8 @@
 import { Julee } from "next/font/google";
 import Link from "next/link";
+import { BsSearch } from "react-icons/bs";
+import { IoIosSearch } from "react-icons/io";
+import NavLinks from "./NavLinks";
 const julee = Julee({ weight: "400", subsets: ["latin"] });
 function Header() {
   const navLinks = [
@@ -25,27 +28,21 @@ function Header() {
     },
   ];
   return (
-    <nav className="px-10 w-full justify-between items-center flex py-5">
-      <h3 className={`${julee.className} text-4xl text-purple-primary`}>
+    <nav className="px-10 w-full justify-around items-center flex py-5">
+      <h3 className={`${julee.className} text-5xl text-purple-primary`}>
         <Link href={"/"}>Mint</Link>
       </h3>
-      <div>
+      <div className="relative w-1/3">
         <input
           placeholder="Search Events"
-          className="p-3 border pl-5 w-[200%] rounded-full"
+          className="p-4 border hidden md:block pl-5 w-full rounded-full"
           type="text"
         />
+        <span className="absolute text-white bg-verdant p-2 rounded-full top-1 right-1">
+          <IoIosSearch size={35} />
+        </span>
       </div>
-
-      <div className="flex w-1/3 justify-between">
-        {navLinks.map(({ title, path }) => (
-          <>
-            <Link href={path}>
-              <p>{title}</p>
-            </Link>
-          </>
-        ))}
-      </div>
+      <NavLinks navLinks={navLinks} />
     </nav>
   );
 }
