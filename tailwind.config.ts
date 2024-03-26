@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        julee: ["Julee", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
+      },
       colors: {
         verdant: "#12674A",
         "purple-primary": "#442B48",
@@ -15,8 +19,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-image":
+          "linear-gradient( to bottom, rgb(0, 0, 0, 0.5), rgb(2, 2, 2, 0.5) ),url('../assets/samantha-gades-fIHozNWfcvs-unsplash.jpg')",
       },
     },
   },
