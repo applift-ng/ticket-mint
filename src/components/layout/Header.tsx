@@ -28,7 +28,7 @@ function Header() {
     },
   ];
   return (
-    <nav className="px-10 w-full md:justify-around justify-between items-center flex py-5">
+    <nav className="px-10 w-full md:justify-around justify-between items-center flex py-3">
       <h3 className={`font-julee text-5xl text-purple-primary`}>
         <Link href={"/"}>Mint</Link>
       </h3>
