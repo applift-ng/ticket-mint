@@ -17,7 +17,10 @@ function Event({
   eventLocation,
 }) {
   return (
-    <div className="h-[50vh] w-auto relative cursor-pointer hover:drop-shadow-lg hover:scale-[1.02] duration-200 shadow-lg justify-around rounded-md flex flex-col gap-2 bg-purple-secondary p-4">
+    <div
+      key={_id}
+      className="h-[50vh] w-auto relative cursor-pointer hover:drop-shadow-lg hover:scale-[1.02] duration-200 shadow-lg justify-around rounded-md flex flex-col gap-2 bg-purple-secondary p-4"
+    >
       <div className={`w-full mx-auto h-1/2 flex `}>
         <Image
           className="  object-cover"

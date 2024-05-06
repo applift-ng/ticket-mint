@@ -1,5 +1,6 @@
 import Event from "@/components/Ui/Event";
 import axios from "axios";
+import { Suspense } from "react";
 
 interface EventType {
   _id: string;
@@ -29,13 +30,15 @@ export default async function Page() {
   // console.log("This is what i want", events);
   return (
     <div className="">
-      <div className="grid w-full grid-cols-1 gap-5 px-5  md:grid-cols-3 lg:grid-cols-4 ">
-        {events.map((event: EventType) => (
-          <>
-            <Event {...event} />
-          </>
-        ))}
-      </div>
+      <Suspense fallback={<div>Loading</div>}>
+        <div className="grid w-full grid-cols-1 gap-5 px-5  md:grid-cols-3 lg:grid-cols-4 ">
+          {events.map((event: EventType) => (
+            <>
+              <Event key={event._id} {...event} />
+            </>
+          ))}
+        </div>
+      </Suspense>
     </div>
   );
 }
