@@ -47,7 +47,7 @@ function Event({
           </p>
 
           <span className="flex gap-1 text-verdant items-center font-bold">
-            <BsPeopleFill /> {tickets.length}+
+            <BsPeopleFill />
           </span>
         </span>
         <span className="flex w-full mt-5 justify-between">
