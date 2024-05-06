@@ -5,7 +5,6 @@ import Events from "../components/Ui/Events";
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <Events />
     </>

@@ -35,7 +35,7 @@ function Header() {
       <div className="relative md:block hidden w-1/3">
         <input
           placeholder="Search Events"
-          className="p-4 border hidden md:block pl-5 w-full rounded-full"
+          className="p-4 border focus:outline-none hidden md:block pl-5 w-full rounded-full"
           type="text"
         />
         <span className="md:absolute text-black md:text-white md:bg-verdant p-2 rounded-full md: top-1 right-1">

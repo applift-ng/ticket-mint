@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Mint",
@@ -23,7 +24,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-poppins">{children}</body>
+      <body className="font-poppins">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,53 +5,52 @@ import { BsPeopleFill } from "react-icons/bs";
 import { BiCalendar } from "react-icons/bi";
 import { FaLocationPin } from "react-icons/fa6";
 import { GrLocation } from "react-icons/gr";
+import { formattedDate } from "../../data/utils/functions";
 function Event({
-  date,
-  name,
-  description,
-  attendes,
-  location,
-  organizers,
-  startprice,
+  _id,
+  eventFlier,
+  eventName,
+  eventDate,
+  createdBy,
+  tickets,
+  __v,
+  eventLocation,
 }) {
-  const formattedDate = new Date(date).toLocaleDateString();
   return (
-    <div className="h-[50vh] relative shadow-lg justify-between rounded-md flex flex-col gap-2 bg-purple-secondary p-4">
+    <div className="h-[50vh] w-auto relative cursor-pointer hover:drop-shadow-lg hover:scale-[1.02] duration-200 shadow-lg justify-around rounded-md flex flex-col gap-2 bg-purple-secondary p-4">
       <div className={`w-full mx-auto h-1/2 flex `}>
         <Image
-          className=" object-cover"
-          width={0}
-          height={0}
-          src={img}
-          alt={name}
+          className="  object-cover"
+          width={500}
+          height={500}
+          src={eventFlier}
+          alt={eventName}
         />
       </div>
       <div className="w-full flex h-1/2 flex-col">
         <span>
-          <h3 className="text-xl font-medium">{name}</h3>
+          <h3 className="text-xl font-medium">{eventName}</h3>
           <p className="absolute flex  gap-1 top-6 right-6 p-1 rounded bg-verdant/30">
             <BiCalendar size={20} />
-            {formattedDate}
+            {formattedDate(eventDate)}
           </p>
         </span>
         <p className="font-medium opacity-60">
-          Organized by <span className="font-bold">{organizers}</span>
+          Organized by <span className="font-bold">{createdBy}</span>
         </p>
         <span className="w-full justify-between flex text-sm ">
           <p className="font-medium gap-1 opacity-70 flex">
-            <GrLocation size={20} /> {location}
+            <GrLocation size={20} /> {eventLocation}
           </p>
 
           <span className="flex gap-1 text-verdant items-center font-bold">
-            <BsPeopleFill /> {attendes}+
+            <BsPeopleFill /> {tickets.length}+
           </span>
         </span>
         <span className="flex w-full mt-5 justify-between">
           <span>
             <p className="text-xs">Tickets from</p>
-            <p className="font-semibold ">
-              {startprice ? `N${startprice}` : "Free"}
-            </p>
+            <p className="font-semibold ">{__v ? `N${startprice}` : "Free"}</p>
           </span>
           <Link className="" href={"/"}>
             <button className="py-2 px-3 hover:bg-verdant bg-transparent w-full border-verdant border font-medium hover:text-white  text-verdant duration-500 rounded">
