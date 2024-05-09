@@ -1,6 +1,6 @@
 import Header from "@/components/layout/Header";
 import Image from "next/image";
-import image from "../../assets/samantha-gades-fIHozNWfcvs-unsplash.jpg";
+import image from "../../../assets/samantha-gades-fIHozNWfcvs-unsplash.jpg";
 import { FaLocationPin } from "react-icons/fa6";
 import { GrLocation } from "react-icons/gr";
 
@@ -21,12 +21,11 @@ export default function Page({ params }: { params: { event: string } }) {
   };
   return (
     <>
-      <Header />
-      <div className="w-full md:px-14 py-5">
-        <div className="flex gap-8">
+      <div className="w-full flex flex-col px-5 md:px-14 py-5">
+        <div className="flex md:flex-row flex-col gap-8">
           <Image
             src={image}
-            className="w-3/5"
+            className="md:w-3/5"
             width={0}
             height={0}
             alt={event}
@@ -38,6 +37,7 @@ export default function Page({ params }: { params: { event: string } }) {
             <p className="text-lg font-bold">
               Organized by {events.organizers}
             </p>
+            <p>at least i got the event {event}</p>
             <div>
               <span className="flex">
                 <GrLocation size={24} />
