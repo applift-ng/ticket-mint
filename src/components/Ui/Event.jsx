@@ -32,7 +32,7 @@ function Event({
       </div>
       <div className="w-full flex h-1/2 flex-col">
         <span>
-          <h3 className="text-xl font-medium">{eventName}</h3>
+          <h3 className="text-xl  font-medium">{eventName}</h3>
           <p className="absolute flex  gap-1 top-6 right-6 p-1 rounded bg-verdant/30">
             <BiCalendar size={20} />
             {formattedDate(eventDate)}

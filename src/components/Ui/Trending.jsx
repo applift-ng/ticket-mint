@@ -11,7 +11,7 @@ function Trending() {
     date: new Date(),
   };
   return (
-    <div className="flex w-1/3 flex-col gap-2 justify-center">
+    <div className="md:flex w-1/3 hidden  flex-col gap-2 justify-center">
       <h3 className="text-white text-4xl font-semibold">Trending</h3>
       <Event {...trendData} />
     </div>
